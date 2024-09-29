@@ -6,10 +6,10 @@ df_book=pd.read_csv('Historical_locations_ZNK951.csv')
 df_book.info()
 
 #Selección de los atributos mas significativos.
-df_book_filter1=df_book[['Unit','Events','Date','Landmark']]
+df_book_filter01=df_book[['Unit','Events','Date','Landmark']]
 
 #Selección de los eventos mas significativos.
-df_book_land_pu=df_book_filter1[
+df_book_land_pu=df_book_filter01[
     (df_book['Events']=='Geofence IN')|
     (df_book['Events']=='Geofence OUT')|
     (df_book['Events']=='Landmark IN') |
