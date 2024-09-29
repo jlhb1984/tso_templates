@@ -1,11 +1,15 @@
 import pandas as pd
 import numpy as np
 
-number_plate=input("Digite la placa del vehículo: ")
+number_plate=input("Digite la placa del vehículo en mayúscula: ")
 print(number_plate)
 
+#Creación de la ruta:
+path='Historical_locations_'+number_plate+'.csv'
+print(path)
+
 #Carga del dataframe del vehículo.
-df_book=pd.read_csv('Historical_locations_ZNK951.csv')
+df_book=pd.read_csv(path)
 df_book.info()
 
 #Selección de los atributos mas significativos.
