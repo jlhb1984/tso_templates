@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 
+number_plate=input("Digite la placa del vehículo: ")
+print(number_plate)
+
 #Carga del dataframe del vehículo.
 df_book=pd.read_csv('Historical_locations_ZNK951.csv')
 df_book.info()
