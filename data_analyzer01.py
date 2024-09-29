@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 print("data_analyzer01.")
-option=input("1. Digitar placa del vehículo.\n2. Salir.")
+option=input("1. Digitar placa del vehículo.\n2. Salir. \n")
 
 while option!=2:
     
@@ -67,4 +67,4 @@ while option!=2:
         print("Saliendo")
         break
     
-    option=input("1. Digitar placa del vehículo.\n2. Salir.")
+    option=input("1. Digitar placa del vehículo.\n2. Salir. \n")
