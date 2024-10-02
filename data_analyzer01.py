@@ -1,16 +1,11 @@
 import pandas as pd
-import numpy as np
 
-print("data_analyzer01.")
-option=input("1. Digitar placa del vehículo.\n2. Salir. \n")
+class Data_analyzer:
+    def __init__(self,number_plate):
+        self.number_plate=number_plate
 
-while option!=2:
-    
-    if option=='1':
-        number_plate=input("Digite la placa del vehículo en mayúscula: ")
-        print(number_plate)
-
-        #Creación de la ruta:
+    def data_analysis(number_plate):
+        print("data_analyzer01.")
         path='Historical_locations_'+number_plate+'.csv'
         print(path)
 
@@ -29,7 +24,7 @@ while option!=2:
             (df_book['Events']=='Landmark OUT')|
             (df_book['Events']=='POWER UP')|
             (df_book['Events']=='Ignition ON')]
-        #print(df_book_land_pu)
+            #print(df_book_land_pu)
 
         #Aquí irá los valores del atributo estudiado del dataframe del vehículo.
         landmarks=df_book_land_pu.loc[:,'Landmark']
@@ -52,19 +47,14 @@ while option!=2:
 
         print("Wrong logs: ")
 
-        for i in range(0,total_geofences):
-            wrong_logs=df_book_land_pu[
-            ((df_book_land_pu['Events']=='Landmark OUT')&
-            (df_book_land_pu['Landmark']==geofences.iloc[i])|
-            (df_book_land_pu['Events']=='Landmark IN')&
-            (df_book_land_pu['Landmark']==geofences.iloc[i])
-            )
-            ]
-            if len(wrong_logs)!=0:
-                print(wrong_logs)
-
-    elif option=='2':
-        print("Saliendo")
-        break
-    
-    option=input("1. Digitar placa del vehículo.\n2. Salir. \n")
+        for i in range(0,total_geofences):                
+                wrong_logs=df_book_land_pu[
+                ((df_book_land_pu['Events']=='Landmark OUT')&
+                 (df_book_land_pu['Landmark']==geofences.iloc[i])|
+                 (df_book_land_pu['Events']=='Landmark IN')&
+                 (df_book_land_pu['Landmark']==geofences.iloc[i])
+                )
+                ]
+                    
+                if len(wrong_logs)!=0:
+                    print(wrong_logs)

@@ -1,11 +1,19 @@
 import pandas as pd
 import numpy as np
+from tables_comparator import Tables_comparator
+from data_analyzer01 import Data_analyzer
 
-print("Tables comparator.")
-option=input("1. Comparar.\n2. Salir. \n")
+print("data_analyzer01.")
+option=input("1. Data_analyzer01.\n2. Tables comparator. \n3. Salir. \n")
 
-while option!=2:
+while option!=3:
+    
     if option=='1':
+        number_plate=input("Digite la placa del vehículo en mayúscula: ")
+        print(number_plate)
+        Data_analyzer.data_analysis(number_plate)
+
+    elif option=='2':
         #Carga de la tabla 1. Landmarks InOut.csv
         table01=input("Digita el nombre de la tabla 1: ")
         df_book_landmarks=pd.read_csv(table01)
@@ -28,24 +36,10 @@ while option!=2:
         geofences.info()
         print(geofences)
 
-        landmarks.drop_duplicates(inplace=True)
-        geofences.drop_duplicates(inplace=True)
+        Tables_comparator.comparator(landmarks,geofences)        
 
-        total_geofences=geofences.count()
-        total_landmarks=landmarks.count()
-        print("Total geofences: ",total_geofences)
-        print("Total landmarks: ",total_landmarks)
-
-        for i in range(0,total_geofences):
-            for j in range(0,total_landmarks):
-                if geofences.iloc[i]==landmarks.iloc[j]:
-                    print("\ncdz")
-                    print("Se encontró geofence con igual nombre de landmark")
-                    print("Geofence número: ",i,"con nombre: ",geofences.iloc[i],". ","Landmark número: ",j,"con nombre: ",landmarks.iloc[j],".")
-    
-    elif option=='2':
-        print("Saliendo!")
+    elif option=='3':
+        print("Saliendo")
         break
-
-    print("Tables comparator.")
-    option=input("1. Comparar.\n2. Salir. \n")
+    
+    option=input("1. Data_analyzer01.\n2. Tables comparator. \n3. Salir. \n")
