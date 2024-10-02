@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from tables_comparator import Tables_comparator
-from data_analyzer01 import Data_analyzer
+from data_analyzer import Data_analyzer
 
 print("data_analyzer01.")
 option=input("1. Data_analyzer01.\n2. Tables comparator. \n3. Salir. \n")
