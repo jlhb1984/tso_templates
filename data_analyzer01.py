@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 class Data_analyzer:
     def __init__(self,number_plate):
