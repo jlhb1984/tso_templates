@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 from tables_comparator import Tables_comparator
 from data_analyzer import Data_analyzer
+from date import Date
 
 print("data_analyzer01.")
-option=input("1. Data_analyzer01.\n2. Tables comparator. \n3. Salir. \n")
+option=input("1. Data_analyzer01.\n2. Tables comparator. \n3. Str_date_order. \n4. Salir. \n")
 
-while option!=3:
+while option!=4:
     
     if option=='1':
         number_plate=input("Digite la placa del vehículo en mayúscula: ")
@@ -36,10 +37,14 @@ while option!=3:
         geofences.info()
         print(geofences)
 
-        Tables_comparator.comparator(landmarks,geofences)        
+        Tables_comparator.comparator(landmarks,geofences)
 
     elif option=='3':
+        table02=input("Digita el nombre de la tabla: ")
+        Date.order_date(table02)       
+
+    elif option=='4':
         print("Saliendo")
         break
     
-    option=input("1. Data_analyzer01.\n2. Tables comparator. \n3. Salir. \n")
+    option=input("1. Data_analyzer01.\n2. Tables comparator. \n3. Str_date_order. \n4. Salir. \n")
