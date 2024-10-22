@@ -17,27 +17,15 @@ while option!=4:
     elif option=='2':
         #Carga de la tabla 1. Landmarks InOut.csv
         table01=input("Digita el nombre de la tabla 1: ")
-        df_book_landmarks=pd.read_csv(table01)
-        df_book_landmarks.info()
+        df_book_table01=pd.read_csv(table01)
+        #df_book_table01.info()
 
         #Carga de la tabla 2. Geofences InOut Report.csv
         table02=input("Digita el nombre de la tabla 2: ")
-        df_book_geofences=pd.read_csv(table02)
-        df_book_geofences.info()
-
-        #Carga de la columna de la tabla 1. ContactName
-        table01_column=input("Digita el nombre de la columna de la tabla 1: ")
-        landmarks=df_book_landmarks.loc[:,table01_column]
-        landmarks.info()
-        print(landmarks)
-
-        #Carga de la columna de la tabla 1. GeofenceName
-        table02_column=input("Digita el nombre de la columna de la tabla 2: ")
-        geofences=df_book_geofences.loc[:,table02_column]
-        geofences.info()
-        print(geofences)
-
-        Tables_comparator.comparator(landmarks,geofences)
+        df_book_table02=pd.read_csv(table02)
+        #df_book_table02.info()
+        
+        Tables_comparator.comparator(df_book_table01,df_book_table02)
 
     elif option=='3':
         table02=input("Digita el nombre de la tabla: ")
